@@ -16,4 +16,16 @@ class HomeController extends Controller
     public function index(){
         return view('home');
     }
+
+    public function ApiPost(Request $request){
+        $data = $request->all();
+        $this->api->create($data);
+        return response()->json(['message' => 'API request created successfully']);
+    }
+
+    public function getAllApi(){
+        $data =  $this->api->latest('created_at')->first();
+        return response()->json($data);
+    }
+
 }
