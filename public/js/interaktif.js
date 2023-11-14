@@ -19,7 +19,7 @@ function getAlldata() {
        mist_statust.textContent = mist_status;
 
        const lightoff = document.getElementById('lightoff');
-       lightoff.textContent = light;
+       lightoff.textContent = response.data.vent_status;
 
         const vent_status = response.data.vent_status;
         const vent_statust = document.getElementById('vent_status');
@@ -35,10 +35,10 @@ divace_misk.addEventListener('click', async function () {
     try {
       const isChecked = divace_misk.checked;
       if (isChecked) {
-        const response = await axios.get('/starmist');
+        const response = await axios.get('http://192.168.175.14/starmist');
         console.log('on mist.');
       } else {
-        const response = await axios.get('/stopmist');
+        const response = await axios.get('http://192.168.175.14/stopmist');
         console.log('off mis.');
       }
     } catch (error) {
@@ -50,10 +50,10 @@ divace_misk.addEventListener('click', async function () {
     try {
       const isChecked = divace_vent.checked;
       if (isChecked) {
-        const response = await axios.get('/starmist');
+        const response = await axios.get('http://192.168.175.14/starmist');
         console.log('Checkbox is checked, and Axios request for true condition was sent.');
       } else {
-        const response = await axios.get('/stopmist');
+        const response = await axios.get('http://192.168.175.14/stopmist');
         console.log('Checkbox is unchecked, and Axios request for false condition was sent.');
       }
     } catch (error) {

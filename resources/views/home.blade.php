@@ -79,7 +79,6 @@
                 <li class="list-group-item">Pintu wallet</li>
             </ul>
         </div>
-
         <div class="card" style="width: 500px;">
             <div class="card-header text-center">
                 Setatus
