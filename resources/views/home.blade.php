@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
+                {{-- <div class="">
                     <div class="card-body">
                         <h5 class="card-title">Vent Divace</h5>
                         <div class="form-check form-switch">
@@ -111,7 +111,7 @@
                             <label class="form-check-label" for="flexSwitchCheckChecked">Off</label>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

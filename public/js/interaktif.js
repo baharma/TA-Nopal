@@ -1,7 +1,6 @@
-
-
 function getAlldata() {
     axios.get('/getAll').then(function(response){
+      console.log(response)
        const humidity = response.data.humidity;
        const humiditys = document.getElementById('humidity');
        humiditys.textContent = humidity + '%';
@@ -26,38 +25,37 @@ function getAlldata() {
         vent_statust.textContent = vent_status;
 
     })
-}
-setInterval(getAlldata, 1000);
+  }
+  setInterval(getAlldata, 1000);
 
-const divace_misk = document.getElementById('divace_misk')
-const divace_vent = document.getElementById('divace_vent');
-divace_misk.addEventListener('click', async function () {
+  const divace_misk = document.getElementById('divace_misk')
+  const divace_vent = document.getElementById('divace_vent');
+  divace_misk.addEventListener('click', async function () {
     try {
       const isChecked = divace_misk.checked;
       if (isChecked) {
-        const response = await axios.get('http://192.168.175.14/starmist');
+        const response = await axios.get('http://192.168.238.14:80/startmist');
         console.log('on mist.');
       } else {
-        const response = await axios.get('http://192.168.175.14/stopmist');
-        console.log('off mis.');
+        const response = await axios.get('http://192.168.238.14:80/stopmist');
+        console.log('off mist.');
       }
     } catch (error) {
       console.error('An error occurred:', error);
     }
   });
 
-  divace_vent.addEventListener('click', async function () {
-    try {
-      const isChecked = divace_vent.checked;
-      if (isChecked) {
-        const response = await axios.get('http://192.168.175.14/starmist');
-        console.log('Checkbox is checked, and Axios request for true condition was sent.');
-      } else {
-        const response = await axios.get('http://192.168.175.14/stopmist');
-        console.log('Checkbox is unchecked, and Axios request for false condition was sent.');
-      }
-    } catch (error) {
-      console.error('An error occurred:', error);
-    }
-  });
-
+//   divace_vent.addEventListener('click', async function () {
+//     try {
+//       const isChecked = divace_vent.checked;
+//       if (isChecked) {
+//         const response = await axios.get('http://192.168.238.14:80/openvent');
+//         console.log('Checkbox is checked, and Axios request for true condition was sent.');
+//       } else {
+//         const response = await axios.get('http://192.168.238.14:80/closevent');
+//         console.log('Checkbox is unchecked, and Axios request for false condition was sent.');
+//       }
+//     } catch (error) {
+//       console.error('An error occurred:', error);
+//     }
+//   });
