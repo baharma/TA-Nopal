@@ -28,4 +28,10 @@ class HomeController extends Controller
         return response()->json($data);
     }
 
+
+    public function getHistory(){
+        $data = $this->api->orderBy('created_at','asc')->get();
+        return view('history',compact('data'));
+    }
+
 }

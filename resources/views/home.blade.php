@@ -18,6 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="navbar-brand bold text-white " style="font-size: 15px" href="/history">History</a>
                     </li>
                 </ul>
             </div>
@@ -75,7 +76,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Misk Maker</li>
-                <li class="list-group-item">Lampu</li>
+                {{-- <li class="list-group-item">Lampu</li> --}}
                 <li class="list-group-item">Pintu wallet</li>
             </ul>
         </div>
@@ -85,7 +86,7 @@
             </div>
             <ul class="list-group list-group-flush text-center">
                 <li class="list-group-item" id="mist_status">ON</li>
-                <li class="list-group-item" id="lightoff">Off</li>
+                {{-- <li class="list-group-item" id="lightoff">Off</li> --}}
                 <li class="list-group-item" id="vent_status">Tutup</li>
             </ul>
         </div>
